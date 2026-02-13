@@ -66,8 +66,11 @@
     .quote{padding:12px;font-size:13px;line-height:1.8}
     .quote p{margin:0 0 8px}
     .quote small{color:var(--muted)}
-    .socialHats{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-    .socialHats a{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:var(--text);padding:8px 10px;border-radius:999px;border:1px solid color-mix(in srgb,var(--accent) 45%, transparent);background:color-mix(in srgb,var(--accent) 16%, transparent);font-size:12px}
+    .socialHats{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+    .socialHats a{width:46px;height:46px;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;color:var(--text);border-radius:999px;border:1px solid color-mix(in srgb,var(--accent) 45%, transparent);background:color-mix(in srgb,var(--accent) 16%, transparent);font-size:20px;transition:transform .28s ease, box-shadow .28s ease, background .28s ease;animation:socialFloat 3.4s ease-in-out infinite}
+    .socialHats a:nth-child(2){animation-delay:.15s}.socialHats a:nth-child(3){animation-delay:.3s}.socialHats a:nth-child(4){animation-delay:.45s}.socialHats a:nth-child(5){animation-delay:.6s}
+    .socialHats a:hover{transform:translateY(-4px) scale(1.07);box-shadow:0 10px 20px color-mix(in srgb,var(--accent) 35%, transparent);background:color-mix(in srgb,var(--accent) 28%, transparent)}
+    @keyframes socialFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
 
 
     .aboutBox{padding:14px}
@@ -198,9 +201,9 @@
 
       $('waNumLink').textContent='+'+st.whatsapp; $('waNumLink').href=waUrl(st.whatsapp,'مرحبا شيف'); $('waNumLink').target='_blank';
       $('emailLink').textContent=st.email; $('emailLink').href=`mailto:${st.email}`;
-      const socialMap=[['tiktok','تيك توك','🎵'],['snapchat','سناب','👻'],['facebook','فيسبوك','📘'],['instagram','إنستقرام','📸'],['youtube','يوتيوب','▶️']];
+      const socialMap=[['tiktok','تيك توك','🎵'],['snapchat','سناب شات','👻'],['facebook','فيسبوك','📘'],['instagram','إنستغرام','📸'],['youtube','يوتيوب','▶️']];
       $('socialLinks').innerHTML='';
-      socialMap.forEach(([k,label,icon])=>{const a=document.createElement('a'); a.href=st.socials[k]||'#'; a.target='_blank'; a.rel='noopener'; a.textContent=`${icon} ${label}`; $('socialLinks').appendChild(a);});
+      socialMap.forEach(([k,label,icon])=>{const a=document.createElement('a'); a.href=st.socials[k]||'#'; a.target='_blank'; a.rel='noopener'; a.title=label; a.setAttribute('aria-label',label); a.textContent=icon; $('socialLinks').appendChild(a);});
 
       $('btnWhatsTop').onclick=()=>window.open(waUrl(st.whatsapp,'مرحبا شيف، عندي استفسار'),'_blank');
       $('btnWhatsHero').onclick=()=>window.open(waUrl(st.whatsapp,'مرحبا شيف، أريد عرض خدمات'),'_blank');
