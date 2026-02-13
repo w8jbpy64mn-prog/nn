@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-gradient-to-br from-[#071a15] via-[#0d1212] to-[#131313] text-zinc-100 antialiased;
+}
+
+.glass {
+  @apply border border-emerald-200/10 bg-zinc-900/45 backdrop-blur-xl;
+}
+
+.executive-card {
+  @apply rounded-2xl border border-emerald-200/10 bg-zinc-900/55 p-6 shadow-[0_20px_80px_-40px_rgba(16,185,129,.45)];
+}
+
+.gold-accent {
+  @apply text-amber-300;
+}
