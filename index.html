@@ -198,9 +198,9 @@
 
       $('waNumLink').textContent='+'+st.whatsapp; $('waNumLink').href=waUrl(st.whatsapp,'مرحبا شيف'); $('waNumLink').target='_blank';
       $('emailLink').textContent=st.email; $('emailLink').href=`mailto:${st.email}`;
-      const socialMap=[['tiktok','تيك توك'],['snapchat','سناب'],['facebook','فيسبوك'],['instagram','إنستقرام'],['youtube','يوتيوب']];
+      const socialMap=[['tiktok','تيك توك','🎵'],['snapchat','سناب','👻'],['facebook','فيسبوك','📘'],['instagram','إنستقرام','📸'],['youtube','يوتيوب','▶️']];
       $('socialLinks').innerHTML='';
-      socialMap.forEach(([k,label])=>{const a=document.createElement('a'); a.href=st.socials[k]||'#'; a.target='_blank'; a.rel='noopener'; a.textContent=`👨‍🍳 ${label}`; $('socialLinks').appendChild(a);});
+      socialMap.forEach(([k,label,icon])=>{const a=document.createElement('a'); a.href=st.socials[k]||'#'; a.target='_blank'; a.rel='noopener'; a.textContent=`${icon} ${label}`; $('socialLinks').appendChild(a);});
 
       $('btnWhatsTop').onclick=()=>window.open(waUrl(st.whatsapp,'مرحبا شيف، عندي استفسار'),'_blank');
       $('btnWhatsHero').onclick=()=>window.open(waUrl(st.whatsapp,'مرحبا شيف، أريد عرض خدمات'),'_blank');
