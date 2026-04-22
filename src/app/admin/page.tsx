@@ -1,10 +1,5 @@
-import { AdminDashboard } from '@/components/admin/admin-dashboard';
-import { AppShell } from '@/components/layout/app-shell';
+import { HealthyAdminConsole } from '@/components/admin/healthy-admin-console';
 
 export default function AdminPage() {
-  return (
-    <AppShell isAdmin>
-      <AdminDashboard />
-    </AppShell>
-  );
+  return <HealthyAdminConsole />;
 }
